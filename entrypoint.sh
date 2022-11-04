@@ -129,6 +129,9 @@ if [ "$isHelmChart" = "true" ]; then
     echo ""
   done < <(find "$inputpath" -type f -name 'Chart.y*ml')
 elif [ "$isKustomization" = "true" ]; then
+  echo "datree kustomize test $inputpath $cliArguments -- $kustomizeArgs"
+  ls -la
+  ls -la kubernetes
   datree kustomize test $inputpath $cliArguments -- $kustomizeArgs
   create_report "$inputpath"
 else
