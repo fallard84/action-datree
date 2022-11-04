@@ -130,6 +130,7 @@ if [ "$isHelmChart" = "true" ]; then
   done < <(find "$inputpath" -type f -name 'Chart.y*ml')
 elif [ "$isKustomization" = "true" ]; then
   echo "datree kustomize test $inputpath $cliArguments -- $kustomizeArgs"
+  pwd
   ls -la
   ls -la kubernetes
   datree kustomize test $inputpath $cliArguments -- $kustomizeArgs
